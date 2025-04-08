@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    font-family: "Oswald", serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Content{
+    display:block;
+}
+
+.ContentEN{
+    display: none;
+}
+
+.Content,
+.ContentEN{
+    width: 100%;
+    height: 100%;
+}
+
+.Content .Text,
+.ContentEN .Text {
+    margin: 20px;
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+.Content .FirstPhoto,
+.ContentEN .FirstPhoto {
+    width: 400px;
+    height: 400px;
+}
+
+.Content .Photo,
+.ContentEN .Photo {
+    width: 400px;
+    height: 200px;
+}
+
+.Content .dropdown-box-Full,
+.ContentEN .dropdown-box-Full {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.Content .dropdown-box-Full .button,
+.ContentEN .dropdown-box-Full .button {
+    padding: 2px;
+    border: 1px black solid;
+    border-radius: 8px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    font-size: 35px;
+    margin:10px 50px;
+    transition: 0.3s ease;
+}
+
+.Content table,
+.ContentEN table {
+    table-layout: fixed;
+}
+
+.Content table, tr, td,
+.ContentEN table, .ContentEN tr, .ContentEN td {
+    align-items: center;
+    margin: auto;
+    /*border: 1px black solid;
+    border-collapse: collapse;*/
+}
+
+.Content ul,
+.ContentEN ul {
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    list-style: disc;
+}
+
+.Content .booking-section,
+.ContentEN .booking-section {
+    display: inline-block;
+    padding: 20px 20px;
+    border: 1px black solid;
+    border-radius: 5px;
+}
+
+.Content .booking-section .button,
+.ContentEN .booking-section .button {
+    display: block;
+    margin: 0 auto;
+    padding: 3px;
+    border: 1px black solid;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.Content .booking-section .button:hover,
+.ContentEN .booking-section .button:hover {
+    transform: scale(1.1);
+}

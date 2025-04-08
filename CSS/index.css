@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    font-family: "Oswald", serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Content{
+    display:block;
+}
+
+.ContentEN{
+    display: none;
+}
+
+.Content,
+.ContentEN{
+    width: 100%;
+    height: 100%;
+}
+
+.Content .slider,
+.ContentEN .slider {
+    width: 840px;   /*Can adjust*/
+    height: 525px;  /*Can adjust*/
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.Content .slides,
+.ContentEN .slides {
+    display: flex;
+    transition: transform 1s ease-in-out;  /* Slide effect */
+}
+
+.Content .slides img,
+.ContentEN .slides img {
+    width: 840px;   /*Can adjust*/
+    height: 525px;  /*Can adjust*/
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.Content .prev, .Content .next,
+.ContentEN .prev, .ContentEN .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 16px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Content .prev,
+.ContentEN .prev {
+    left: 10px;
+}
+
+.Content .next,
+.ContentEN .next {
+    right: 10px;
+}
+
+/* Hover effect for both prev and next buttons */
+.Content .prev:hover,
+.ContentEN .prev:hover {
+    transform: translateY(-50%) translateX(-10px) scale(1.1); /* Move left and scale */
+}
+
+.Content .next:hover,
+.ContentEN .next:hover {
+    transform: translateY(-50%) translateX(10px) scale(1.1); /* Move right and scale */
+}
+
+.Content .prev:hover, .Content .next:hover,
+.ContentEN .prev:hover, .ContentEN .next:hover {
+    background-color: rgba(0, 0, 0, 0.7);  /* Darker background on hover */
+}
+
+.Content .TheLine,
+.ContentEN .TheLine{
+
+    height: 10px;
+    border-width: 0px;
+    color:rgb(0, 0, 0);
+    background-color:rgb(0, 0, 0)
+}
+
+.Content .Greeting,
+.ContentEN .Greeting {
+    display: flex;           /* Use flexbox to arrange items horizontally */
+    align-items: center;     /* Vertically center the items (if needed) */
+    justify-content: center; /* Align the items to the left */
+    margin: 100px 0px;     /* Adjust the margin of the container */
+}
+
+.Content .Greeting .GreetingText,
+.ContentEN .Greeting .GreetingText {
+    font-size: 80px;
+    margin-right: 200px;
+}
+
+.Content .Greeting .BookingButton,
+.ContentEN .Greeting .BookingButton {
+    cursor: pointer;        /* Change the cursor to pointer when hovering over the button */
+    background-color: black;
+    font-size: 25px;
+    font: bold;
+    color: white;
+    padding: 40px 60px;      /* Adjust padding for the button */
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.Content .Greeting .BookingButton:hover,
+.ContentEN .Greeting .BookingButton:hover {
+    transform: scale(1.1);
+}

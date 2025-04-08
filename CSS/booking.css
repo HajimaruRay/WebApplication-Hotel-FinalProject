@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    font-family: "Oswald", serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Content{
+    display: block;
+}
+
+.ContentEN{
+    display: none;
+}
+
+.Content .TheLine,
+.ContentEN .TheLine{
+    width: 100%;
+    height: 100%;
+    height: 10px;
+    border-width: 0px;
+    color:rgb(0, 0, 0);
+    background-color:rgb(0, 0, 0)
+}
+
+.Content .Booking,
+.ContentEN .Booking{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Content .Booking .Small-Room,
+.ContentEN .Booking .Small-Room{
+    margin-top: 20px;
+    width: 1800px;
+    height: 300px;
+    /* border: 1px black solid;
+    border-radius: 5px; */
+    padding: 10px;
+    display: flex;
+}
+
+.Content .Booking .Small-Room .Text,
+.ContentEN .Booking .Small-Room .Text{
+    margin-left: 50px;
+    font-size: 40px;
+}
+
+.Content .Booking .Small-Room .Text .detail-button,
+.ContentEN .Booking .Small-Room .Text .detail-button{
+    display: block;
+    border: 1px black solid;
+    border-radius: 30px;
+    background-color: black;
+    color:white;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.Content .Booking .Small-Room .Small-Room-Image,
+.ContentEN .Booking .Small-Room .Small-Room-Image{
+    width: 600px;
+    height: 300px;
+    border: 1px rgb(0, 0, 0) solid;
+    margin: auto 0px;
+}
+
+.Content .Booking .Big-Room,
+.ContentEN .Booking .Big-Room{
+    margin-top: 20px;
+    width: 1800px;
+    height: 300px;
+    /* border: 1px black solid;
+    border-radius: 5px; */
+    padding: 10px;
+    display: flex;
+}
+
+.Content .Booking .Big-Room .Text,
+.ContentEN .Booking .Big-Room .Text{
+    margin-left: 50px;
+    font-size: 40px;
+}
+
+.Content .Booking .Big-Room .Text .detail-button,
+.ContentEN .Booking .Big-Room .Text .detail-button{
+    display: block;
+    border: 1px black solid;
+    border-radius: 30px;
+    background-color: black;
+    color:white;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.Content .Booking .Big-Room .Big-Room-Image,
+.ContentEN .Booking .Big-Room .Big-Room-Image{
+    width: 600px;
+    height: 300px;
+    border: 1px rgb(0, 0, 0) solid;
+    margin: auto 0px;
+}
+
+.Content .Booking .Big-Room .Text .detail-button:hover,
+.ContentEN .Booking .Big-Room .Text .detail-button:hover{
+    transform: scale(1.1);
+}
+
+.Content .Booking .Small-Room .Text .detail-button:hover,
+.ContentEN .Booking .Small-Room .Text .detail-button:hover{
+    transform: scale(1.1);
+}

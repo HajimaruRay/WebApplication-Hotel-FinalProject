@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    font-family: "Oswald", serif;
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.Navbar{
+    display: flex;
+}
+
+.NavbarEN{
+    display: none;
+}
+
+.Navbar,
+.NavbarEN {
+    margin: 0px;
+    padding: 14px 16px;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+
+.Navbar .Name,
+.NavbarEN .Name {
+    margin-right: auto; /* ดัน .Name ไปชิดซ้าย */
+    margin-left: 10px;
+    text-align: start;
+}
+
+.Navbar .ChangeLanguage,
+.NavbarEN .ChangeLanguage {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px white solid;
+    margin-top: auto;
+    transition: transform 0.3s ease;
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+}
+
+.Navbar .Login_image,
+.Navbar .Logout_image,
+.Navbar .UnLogin_image,
+.Navbar .Logout_image,
+.NavbarEN .Login_image,
+.NavbarEN .Logout_image,
+.NavbarEN .UnLogin_image,
+.NavbarEN .Logout_image {
+    margin-left: 10px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+    margin-top: auto;
+    width: 90px;
+    height: 30px;
+    background-color: white;
+    border-radius: 20px;
+    display: none;
+    align-items: center;
+    padding: 0 10px;
+    transition: transform 0.3s ease;
+}
+
+.Navbar .UnLogin_image,
+.NavbarEN .UnLogin_image {
+    display: flex;
+}
+
+.Navbar .Logout_image,
+.NavbarEN .Logout_image {
+    display: flex;
+}
+
+.Navbar .UnLogin_image .Login-Icon-Text,
+.NavbarEN .UnLogin_image .Login-Icon-Text {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    flex-grow: 1;
+    text-align: center;
+    cursor: default;
+    text-decoration: none;
+}
+
+.Navbar .Logout_image .Logout-Icon-Text,
+.NavbarEN .Logout_image .Logout-Icon-Text {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    flex-grow: 1;
+    text-align: center;
+    cursor: default;
+    text-decoration: none;
+}
+
+.Navbar .Login_image .User-Icon-Text,
+.NavbarEN .Login_image .User-Icon-Text {
+    color: rgb(0, 0, 0);
+    font-size: medium;
+    flex-grow: 1;
+    text-align: center;
+    cursor: default;
+    text-decoration: none;
+}
+
+.Navbar .Login_image:hover,
+.NavbarEN .Login_image:hover {
+    transform: scale(1.1);
+}
+
+.Navbar .UnLogin_image:hover,
+.NavbarEN .UnLogin_image:hover {
+    transform: scale(1.1);
+}
+
+.Navbar .Logout_image:hover,
+.NavbarEN .Logout_image:hover {
+    transform: scale(1.1);
+}
+
+.Navbar .ChangeLanguage:hover,
+.NavbarEN .ChangeLanguage:hover {
+    transform: scale(1.1);
+}
