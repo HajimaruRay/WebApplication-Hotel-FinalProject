@@ -23,9 +23,20 @@ $data = $result->fetch_assoc();
 
 if ($result->num_rows === 1) {
     $_SESSION['isLogin'] = true;
-    echo json_encode(["status" => "success", "message" => "Login successful", "data" => $data]);
+    echo json_encode(
+        [
+            "status" => "success", 
+            "message" => "Login successful", 
+            "data" => $data
+        ]
+    );
 } else {
-    echo json_encode(["status" => "error", "message" => "Incorrect username or password"]);
+    echo json_encode(
+        [
+            "status" => "error", 
+            "message" => "Incorrect username or password"
+        ]
+    );
 }
 
 $stmt->close();

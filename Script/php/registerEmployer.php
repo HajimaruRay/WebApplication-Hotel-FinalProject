@@ -27,7 +27,13 @@ $rule = "admin";
 
 if (empty($username) || empty($password)) {
     ob_end_clean();
-    die(json_encode(["status" => "error", "message" => "Username or password cannot be empty"]));
+    die(json_encode(
+            [
+                "status" => "error", 
+                "message" => "Username or password cannot be empty"
+            ]
+        )
+    );
 }
 
 $stmt = $conn->prepare("INSERT INTO userinfo (Username, Password, Rule ,Name, Surname) VALUES (?, ?, ?, ?, ?)");
@@ -49,7 +55,18 @@ if (!$stmt->execute()) {
 }
 
 ob_end_clean();
-echo json_encode(["status" => "success", "message" => "Registration Success"]);
+echo json_encode(
+        [
+            "status" => "success", 
+            "message" => "Registration Success",
+            "data" => [
+                "name" => $name,
+                "surname" => $surname,
+                "username" => $username,
+                "rule" => $rule
+            ]
+        ]
+    );
 
 $stmt->close();
 $conn->close();

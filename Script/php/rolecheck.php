@@ -6,7 +6,12 @@ ini_set('display_errors', 1);
 require 'Server.php'; // ตรวจสอบว่ามีการกำหนดค่าเชื่อมต่อฐานข้อมูล
 
 if (!isset($conn) || $conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+    echo json_encode(
+            [
+                "status" => "error", 
+                "message" => "Database connection failed"
+            ]
+        );
     exit;
 }
 

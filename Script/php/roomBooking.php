@@ -6,7 +6,12 @@ ini_set('display_errors', 1);
 require 'Server.php';
 
 if ($conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+    echo json_encode(
+        [
+            "status" => "error",
+            "message" => "Database connection failed"
+        ]
+    );
     exit;
 }
 
@@ -15,7 +20,12 @@ $data = json_decode(file_get_contents("php://input"), true);
 error_log("📌 JSON Received: " . print_r($data, true));
 
 if (!$data) {
-    echo json_encode(["status" => "error", "message" => "Invalid JSON input"]);
+    echo json_encode(
+        [
+            "status" => "error",
+            "message" => "Invalid JSON input"
+        ]
+    );
     exit;
 }
 
@@ -26,7 +36,12 @@ $bookingName = $data["bookingNameSurname"] ?? "";
 
 // Validate room number (assuming it is a table name or a valid identifier)
 if (!preg_match('/^\w+$/', $roomNumber)) {
-    echo json_encode(["status" => "error", "message" => "Invalid room number"]);
+    echo json_encode(
+        [
+            "status" => "error",
+            "message" => "Invalid room number"
+        ]
+    );
     exit;
 }
 
@@ -36,7 +51,12 @@ $sql = "INSERT INTO `$tableName` (`Check-in`, `Check-out`, `bookingName`) VALUES
 
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
-    echo json_encode(["status" => "error", "message" => "Database query preparation failed"]);
+    echo json_encode(
+        [
+            "status" => "error",
+            "message" => "Database query preparation failed"
+        ]
+    );
     exit;
 }
 
@@ -44,18 +64,37 @@ if (!$stmt) {
 $stmt->bind_param("sss", $checkInDate, $checkOutDate, $bookingName);
 
 if ($stmt->execute()) {
-    echo json_encode(["status" => "success", "message" => "Booking Success"]);
+    echo json_encode(
+            [
+                "status" => "success",
+                "message" => "Booking Success",
+                "data" => [
+                    "roomNumber" => $roomNumber,
+                    "checkInDate" => $checkInDate,
+                    "checkOutDate" => $checkOutDate,
+                    "bookingName" => $bookingName
+                ]
+            ]
+        );
 } else {
     error_log("MySQL Error: " . $conn->error);
     if ($conn->errno == 1062) {
-        echo json_encode(["status" => "error", "message" => "This Booking already exists"]);
+        echo json_encode(
+            [
+                "status" => "error",
+                "message" => "This Booking already exists"
+            ]
+        );
     } else {
-        echo json_encode(["status" => "error", "message" => "Booking failed"]);
+        echo json_encode(
+            [
+                "status" => "error",
+                "message" => "Booking failed"
+            ]
+        );
     }
 }
 
 $stmt->close();
 $conn->close();
 ?>
-
-

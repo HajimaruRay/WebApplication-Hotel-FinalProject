@@ -6,7 +6,10 @@ ini_set('display_errors', 1);
 require 'Server.php';
 
 if ($conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Database connection failed"
+    ]);
     exit;
 }
 
@@ -15,7 +18,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 $BookingName = $data["BookingName"] ?? "";
 
 if (!$BookingName) {
-    echo json_encode(["status" => "error", "message" => "Missing BookingName"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Missing BookingName"
+    ]);
     exit;
 }
 
@@ -33,5 +39,8 @@ while ($row = $result->fetch_assoc()) {
 $stmt->close();
 $conn->close();
 
-echo json_encode($bookings);
+echo json_encode([
+    "status" => "success",
+    "data" => $bookings
+]);
 exit();

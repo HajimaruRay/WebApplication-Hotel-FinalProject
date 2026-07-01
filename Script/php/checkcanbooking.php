@@ -6,7 +6,10 @@ ini_set('display_errors', 1);
 require 'Server.php';
 
 if ($conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Database connection failed"
+    ]);
     exit;
 }
 
@@ -15,7 +18,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 error_log("📌 JSON Received: " . print_r($data, true));
 
 if (!$data) {
-    echo json_encode(["status" => "error", "message" => "Invalid JSON input"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid JSON input"
+    ]);
     exit;
 }
 
@@ -34,12 +40,26 @@ $checkStmt->execute();
 $result = $checkStmt->get_result();
 
 if ($result->num_rows > 0) {
-    echo json_encode(["status" => "error", "message" => "This booking overlaps with an existing one."]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "This booking overlaps with an existing one."
+    ]);
     $checkStmt->close();
     $conn->close();
     exit;
 } else{
-    echo json_encode(["status" => "success"]);
+    echo json_encode([
+        "status" => "success",
+        "message" => "This booking is available.",
+        "data" => [
+            "roomNumber" => $roomNumber,
+            "checkInDate" => $checkInDate,
+            "checkOutDate" => $checkOutDate,
+            "bookingNameSurname" => $bookingName,
+            "TypeRoom" => $TypeRoom,
+            "Amount" => $Amount
+        ]
+    ]);
     $checkStmt->close();
     $conn->close();
     exit;

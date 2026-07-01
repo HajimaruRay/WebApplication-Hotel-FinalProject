@@ -12,14 +12,23 @@ if ($id) {
     $stmt->bind_param("s", $id); // Use "s" for string, change to "i" if integer
     
     if ($stmt->execute()) {
-        echo json_encode(["status" => "success"]);
+        echo json_encode([
+            "status" => "success",
+            "message" => "Booking deleted successfully"
+        ]);
     } else {
-        echo json_encode(["status" => "error", "message" => "Delete failed"]);
+        echo json_encode([
+            "status" => "error",
+            "message" => "Delete failed"
+        ]);
     }
 
     $stmt->close();
 } else {
-    echo json_encode(["status" => "error", "message" => "No RoomNumber provided"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "No RoomNumber provided"
+    ]);
 }
 
 $conn->close();

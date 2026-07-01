@@ -6,7 +6,10 @@ ini_set('display_errors', 1);
 require 'Server.php';
 
 if (!isset($conn) || $conn->connect_error) {
-    echo json_encode(["status" => "error", "message" => "Database connection failed"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Database connection failed"
+    ]);
     exit;
 }
 
@@ -15,7 +18,10 @@ $data = json_decode(file_get_contents("php://input"), true);
 error_log("📌 JSON Received: " . print_r($data, true));
 
 if (!$data) {
-    echo json_encode(["status" => "error", "message" => "Invalid JSON input"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid JSON input"
+    ]);
     exit;
 }
 
@@ -25,7 +31,10 @@ $TypeRoom = $data["TypeRoom"] ?? "";
 
 // Check if TypeRoom is valid
 if (!in_array($TypeRoom, $validColumns)) {
-    echo json_encode(["status" => "error", "message" => "Invalid room type"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "Invalid room type"
+    ]);
     exit;
 }
 
@@ -34,7 +43,10 @@ $query = "SELECT `$TypeRoom` FROM bookingamount LIMIT 1"; // Get the value of th
 $stmt = $conn->prepare($query);
 
 if (!$stmt) {
-    echo json_encode(["status" => "error", "message" => "SQL Prepare Failed"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "SQL Prepare Failed"
+    ]);
     exit;
 }
 
@@ -49,7 +61,10 @@ if ($result->num_rows === 1) {
         "data" => $row[$TypeRoom] // Return the value from the dynamically selected column
     ]);
 } else {
-    echo json_encode(["status" => "error", "message" => "No data found"]);
+    echo json_encode([
+        "status" => "error",
+        "message" => "No data found"
+    ]);
 }
 
 $stmt->close();
