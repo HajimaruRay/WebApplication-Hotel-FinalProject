@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 $data = json_decode(file_get_contents("php://input"), true);
-error_log("📌 JSON Received: " . print_r($data, true));
+error_log("JSON Received: " . print_r($data, true));
 
 if (!$data) {
     ob_end_clean();

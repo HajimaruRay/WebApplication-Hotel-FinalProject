@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 }
 
 $data = json_decode(file_get_contents("php://input"), true);
-error_log("📌 JSON Received: " . print_r($data, true));
+error_log("JSON Received: " . print_r($data, true));
 
 if (!$data) {
     ob_end_clean();
@@ -39,7 +39,12 @@ if (empty($username) || empty($password)) {
 $stmt = $conn->prepare("INSERT INTO userinfo (Username, Password, Rule ,Name, Surname) VALUES (?, ?, ?, ?, ?)");
 if (!$stmt) {
     ob_end_clean();
-    die(json_encode(["status" => "error", "message" => "Database query preparation failed"]));
+    die(json_encode(
+        [
+            "status" => "error", 
+            "message" => "Database query preparation failed"
+        ]
+    ));
 }
 
 $stmt->bind_param("sssss", $username, $password, $rule, $name, $surname);
@@ -48,9 +53,15 @@ if (!$stmt->execute()) {
     error_log("MySQL Error: " . $conn->error);
     ob_end_clean();
     if ($conn->errno == 1062) {
-        die(json_encode(["status" => "error", "message" => "Username already exists"]));
+        die(json_encode([
+            "status" => "error", 
+            "message" => "Username already exists"
+        ]));
     } else {
-        die(json_encode(["status" => "error", "message" => "Registration failed"]));
+        die(json_encode([
+            "status" => "error", 
+            "message" => "Registration failed"
+        ]));
     }
 }
 
