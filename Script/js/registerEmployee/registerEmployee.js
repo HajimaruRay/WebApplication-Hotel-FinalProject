@@ -44,7 +44,8 @@ window.addEventListener("load", function () {
         }
         return response.json();
     })
-    .then(data => {
+    .then(resdata => {
+        const data = resdata.data;
         console.log("📌 Data received:", data);
         let language = sessionStorage.getItem('language');
 

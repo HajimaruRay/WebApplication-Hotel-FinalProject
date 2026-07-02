@@ -15,12 +15,11 @@ window.addEventListener('load', function () {
             }
             return response.json();
         })
-        .then(data => {
-            console.log("📌 Data received:", data);
-
+        .then(resdata => {
+            const data = resdata.data; // ดึงข้อมูลจาก response
             if (language === 'TH') {
                 const tableBody = document.querySelector("#dataTable tbody");
-                tableBody.innerHTML = ""; // ล้างข้อมูลเดิมก่อนแสดงใหม่
+                tableBody.innerHTML = "";
 
                 if (data.length > 0) {
                     data.forEach(row => {
