@@ -25,9 +25,9 @@ WebApplication-Hotel-FinalProject/
 ├── Image/                # Hotel images
 ├── index.php             # Main homepage entry
 ├── php/                  # PHP-based pages and legacy backend logic
-├── Script/
-│   ├── js/               # Frontend JavaScript
-│   └── php/              # Node.js backend migration files
+├── Structure/
+│   ├── frontEnd/               # Frontend JavaScript
+│   └── backEnd/              # Node.js backend migration files
 │       ├── app.js
 │       ├── dataBase.js
 │       ├── controllers/
