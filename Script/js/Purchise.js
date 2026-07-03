@@ -115,7 +115,7 @@ async function saveData() {
         }
 
         // ✅ ถ้าไม่ทับ ค่อยจองเลย
-        let bookingResponse = await fetch("../../Script/php/booking.php", {
+        let bookingResponse = await fetch("http://localhost:3000/v2.0/booking", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ roomNumber, checkInDate, checkOutDate, bookingNameSurname, TypeRoom, Amount })
