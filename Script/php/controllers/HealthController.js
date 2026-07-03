@@ -1,5 +1,7 @@
 // Connected to: Script/php/dataBase.js
 import { getConnection } from '../dataBase.js';
+import { getCurrentTime } from '../centerUnit.js';
+import { stat } from 'node:fs';
 
 class HealthController {
   async checkHealth(req, res) {
@@ -8,7 +10,8 @@ class HealthController {
       await db.execute('SELECT 1');
 
       return res.status(200).json({
-        status: 'ok',
+        status: 'success',
+        timeStamp: await getCurrentTime(new Date().toISOString()),
         message: 'Server is healthy',
         database: 'connected'
       });

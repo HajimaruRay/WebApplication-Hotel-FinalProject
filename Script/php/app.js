@@ -32,6 +32,18 @@ app.use(bookingRoutes);
 app.use(healthRoutes);
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Backend is running on port ${PORT}`);
 });
+
+if (process.stdin.isTTY) {
+  process.stdin.setEncoding('utf8');
+  process.stdin.on('data', (input) => {
+    if (input.trim().toLowerCase() === 'exit') {
+      console.log('Stopping server...');
+      server.close(() => {
+        process.exit(0);
+      });
+    }
+  });
+}
