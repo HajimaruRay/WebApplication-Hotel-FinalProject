@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/CSS/Contract.css">
 <div class="Contract">
-    <script src="../../Script/js/Contract.js" defer></script>
+    <script src="../../../Structure/frontEnd/Contract.js" defer></script>
     <hr class="TheLine">
     <table>
         <tr>
@@ -21,15 +21,15 @@
                 <a href="#" style="text-decoration: none; color:black;">ตำเเหน่ง</a>
                 <div id="EmployerMenu">
                     <br>
-                    <a href="/php/employee/employee.php" style="text-decoration: none; color:black;">จัดการรายการจอง</a>
+                    <a href="../../../php/employee/employee.php" style="text-decoration: none; color:black;">จัดการรายการจอง</a>
                     <br>
-                    <a href="/php/employeeManagement/employeeManagement.php" style="text-decoration: none; color:black;">จัดการพนักงาน</a>
+                    <a href="../../../php/employeeManagement/employeeManagement.php" style="text-decoration: none; color:black;">จัดการพนักงาน</a>
                 </div>
             </td>
             <td>
                 <h3>ติดตามเรา</h3>
-                <img class="Contract-Logo" src="/Image/Instagram_icon.png.webp">
-                <img class="Contract-Logo" src="/Image/Facebook-logo.png">
+                <img class="Contract-Logo" src="../../../Image/Instagram_icon.png.webp">
+                <img class="Contract-Logo" src="../../../Image/Facebook-logo.png">
             </td>
         </tr>
     </table>
@@ -55,15 +55,15 @@
                 <a href="#" style="text-decoration: none; color:black;">Location</a>
                 <div id="EmployerMenuEN">
                     <br>
-                    <a href="/php/employee/employee.php" style="text-decoration: none; color:black;">Booking Management</a>
+                    <a href="../../../php/employee/employee.php" style="text-decoration: none; color:black;">Booking Management</a>
                     <br>
-                    <a href="/php/employeeManagement/employeeManagement.php" style="text-decoration: none; color:black;">Employer Management</a>
+                    <a href="../../../php/employeeManagement/employeeManagement.php" style="text-decoration: none; color:black;">Employer Management</a>
                 </div>
             </td>
             <td>
                 <h3>Social media</h3>
-                <img class="Contract-Logo" src="/Image/Instagram_icon.png.webp">
-                <img class="Contract-Logo" src="/Image/Facebook-logo.png">
+                <img class="Contract-Logo" src="../../../Image/Instagram_icon.png.webp">
+                <img class="Contract-Logo" src="../../../Image/Facebook-logo.png">
             </td>
         </tr>
     </table>

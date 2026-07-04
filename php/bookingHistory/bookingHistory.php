@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <script src="../../../Script/js/bookingHistory/bookingHistory.js" defer></script>
-    <?php include "../../Script/php/Server.php"; ?>
+    <script src="../../../Structure/frontEnd/bookingHistory/bookingHistory.js" defer></script>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
 
     <?php include "bookingHistory-Content.php"; ?>

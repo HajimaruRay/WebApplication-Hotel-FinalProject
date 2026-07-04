@@ -89,7 +89,7 @@ async function saveData() {
     let checkOutDate = `${sessionStorage.getItem("endYear")}-${sessionStorage.getItem("endMonth")}-${sessionStorage.getItem("endDay")}`;
     let bookingNameSurname;
 
-    if (location.href.includes("php/employee/employee.php")) {
+    if (location.href.includes("../../../php/employee/employee.php")) {
         bookingNameSurname = `${document.getElementById('name-field').value} ${document.getElementById('surname-field').value}`;
     } else {
         bookingNameSurname = `${sessionStorage.getItem("Name")} ${sessionStorage.getItem("Surname")}`;
@@ -99,7 +99,7 @@ async function saveData() {
 
     try {
         // 🔎 Step 1: ตรวจสอบว่าทับเวลากับการจองอื่นหรือไม่
-        let response = await fetch("../../Script/php/checkcanbooking.php", {
+        let response = await fetch("../../Structure/backEnd/checkcanbooking.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ roomNumber, checkInDate, checkOutDate })

@@ -14,7 +14,7 @@ function logout(){
         document.getElementById("User-Icon-Text").innerText = sessionStorage.getItem('Login');
     }
 
-    if (window.location.pathname.endsWith('/php/bookingHistory.php') || window.location.pathname.endsWith('/php/employee.php')) {
+    if (window.location.pathname.endsWith('../../../php/bookingHistory.php') || window.location.pathname.endsWith('../../../php/employee.php')) {
         window.location.href = '../../../index.php';
     }
     

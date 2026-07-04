@@ -9,11 +9,11 @@
 </head>
 
 <body>   
-    <script src="../../../Script/js/employee/employee.js" defer></script>
-    <script src="../../../Script/js/employee/employeeEN.js" defer></script>
+    <script src="../../../Structure/frontEnd/employee/employee.js" defer></script>
+    <script src="../../../Structure/frontEnd/employee/employeeEN.js" defer></script>
 
     
-    <?php include "../../Script/php/Server.php"; ?>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
 
     <?php include "employee-Content.php"; ?>

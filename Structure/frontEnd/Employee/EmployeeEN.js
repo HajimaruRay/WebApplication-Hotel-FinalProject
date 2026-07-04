@@ -1,7 +1,7 @@
 window.addEventListener("load", function () {
     console.log("employeeEN");
 
-    fetch("../../../Script/php/employee.php", {
+    fetch("../../../Structure/backEnd/Employee.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" }
     })
@@ -68,7 +68,7 @@ async function addDeleteEventListenersEN() {
 async function deleteBookingEN(id, button) {
 
     console.log(id);
-    fetch("../../../Script/php/DeleteBooking.php", {
+    fetch("../../../Structure/backEnd/DeleteBooking.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id: id }) // Match PHP variable name
@@ -133,7 +133,7 @@ async function saveDataEN() {
 
     try {
         // 🔎 Step 1: ตรวจสอบว่าทับเวลากับการจองอื่นหรือไม่
-        let response = await fetch("../../../Script/php/checkcanbooking.php", {
+        let response = await fetch("../../../Structure/backEnd/CheckCanBooking.php", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ roomNumber, checkInDate, checkOutDate })
@@ -150,7 +150,7 @@ async function saveDataEN() {
 
         try{
             // ✅ ถ้าไม่ทับ ค่อยจองเลย
-            let bookingResponse = await fetch("../../Script/php/booking.php", {
+            let bookingResponse = await fetch("http://localhost:3000/v2.0/booking", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ roomNumber, checkInDate, checkOutDate, bookingNameSurname, TypeRoom, Amount })

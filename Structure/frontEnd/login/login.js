@@ -4,7 +4,7 @@ document.getElementById("Login").addEventListener("click", function (event) {
     let password = document.getElementById("password-field").value;
     console.log("Login");
 
-    fetch("../../Script/php/loginCheck.php", {
+    fetch("../../Structure/backEnd/loginCheck.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username: username, password: password })

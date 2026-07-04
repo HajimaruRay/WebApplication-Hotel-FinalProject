@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="/CSS/Navbar.css">
 <!--Navbar-->
-<script src="../../Script/js/Navbar.js"></script>
+<script src="../../../Structure/frontEnd/Navbar.js"></script>
 <div class="Navbar">
     <div class="Name"><a>❤︎LOGO❤︎</a></div>
 
@@ -8,7 +8,7 @@
         <a class="language-Text"></a>
     </div>
 
-    <a href="../../php/login/login.php">
+    <a href="../../../php/login/login.php">
         <div class="UnLogin_image" id="UnLogin_image">
             <span class="Login-Icon-Text">ล็อกอิน</span>
         </div>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="Login_image" id="Login_image">
-        <a href="../../php/bookingHistory/bookingHistory.php" class="User-Icon-Text" id="User-Icon-Text"></a>
+        <a href="../../../php/bookingHistory/bookingHistory.php" class="User-Icon-Text" id="User-Icon-Text"></a>
     </div>
 </div>
 <div class="NavbarEN">
@@ -29,7 +29,7 @@
             <a class="language-TextEN"></a>
         </div>
 
-        <a href="../../php/login/login.php">
+        <a href="../../../php/login/login.php">
             <div class="UnLogin_image" id="UnLogin_imageEN">
                 <span class="Login-Icon-Text">Login</span>
             </div>
@@ -40,6 +40,6 @@
         </div>
 
         <div class="Login_image" id="Login_imageEN">
-            <a href="../../php/bookingHistory/bookingHistory.php" class="User-Icon-Text" id="User-Icon-TextEN"></a>
+            <a href="../../../php/bookingHistory/bookingHistory.php" class="User-Icon-Text" id="User-Icon-TextEN"></a>
         </div>
     </div>

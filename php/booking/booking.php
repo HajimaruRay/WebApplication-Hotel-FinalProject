@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <?php include "../../Script/php/Server.php"; ?>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
 
     <?php include "booking-Content.php"; ?>

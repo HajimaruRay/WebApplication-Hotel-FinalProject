@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    <script src="../../Script/js/Purchise.js" defer></script>
-    <?php include "../../Script/php/Server.php"; ?>
+    <script src="../../Structure/frontEnd/js/Purchise.js" defer></script>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
-    
+
     <?php include "purchise-Content.php"; ?>
     <?php include "purchise-ContentEN.php"; ?>
 

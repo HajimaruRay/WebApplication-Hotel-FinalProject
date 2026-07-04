@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <script src="../../Script/js/BookingSmallRoom/BookingSmallRoom.js"></script>
-    <script src="../../Script/js/BookingSmallRoom/BookingSmallRoomEN.js"></script>
-    <?php include "../../Script/php/Server.php"; ?>
+    <script src="../../Structure/frontEnd/BookingSmallRoom/BookingSmallRoom.js"></script>
+    <script src="../../Structure/frontEnd/BookingSmallRoom/BookingSmallRoomEN.js"></script>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
 
     <?php include "smallRoom-Content.php"?>

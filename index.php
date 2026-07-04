@@ -9,14 +9,14 @@
 </head>
 
 <body>
-    <script src="/Script/js/slidePhoto.js"></script>
-    <?php include "Script/php/Server.php"; ?>
-    <?php include "php/Navbar.php"; ?>
+    <script src="./Structure/frontEnd/slidePhoto.js"></script>
+    <?php include "./Structure/backEnd/Server.php"; ?>
+    <?php include "./php/Navbar.php"; ?>
 
-    <?php include "index/index-Content.php"; ?>
-    <?php include "index/index-ContentEN.php"; ?>
+    <?php include "./index/index-Content.php"; ?>
+    <?php include "./index/index-ContentEN.php"; ?>
 
-    <?php include "php/Contract.php"; ?>
+    <?php include "./php/Contract.php"; ?>
 </body>
 
 </html>

@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <script src="../../Script/js/login/login.js" defer></script>
-    <script src="../../Script/js/login/loginEN.js" defer></script>
-    <?php include "../../Script/php/Server.php"; ?>
+    <script src="../../Structure/frontEnd/login/login.js" defer></script>
+    <script src="../../Structure/frontEnd/login/loginEN.js" defer></script>
+    <?php include "../../Structure/backEnd/Server.php"; ?>
     <?php include "../Navbar.php"; ?>
 
     <?php include "login-Content.php"; ?>
