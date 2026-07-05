@@ -14,7 +14,7 @@ node app.js
 
 ### 3. Start the frontend
 ```bash
-php -S localhost:5500
+php -S 0.0.0.0:5500
 ```
 
 ## Project structure
