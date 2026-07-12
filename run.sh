@@ -25,9 +25,33 @@ echo "Frontend: http://localhost:5500"
 echo "Backend: Running on Node.js"
 echo "Database: MySQL is running"
 echo ""
-echo "Press Ctrl+C to stop all services..."
+echo "Type 'exit' to stop all services or press Ctrl+C..."
+echo ""
 
-# Wait for processes and handle cleanup
-trap "kill $BACKEND_PID $FRONTEND_PID 2>/dev/null; echo 'Services stopped.'; exit" SIGINT SIGTERM
+# Function to cleanup and stop all services
+cleanup() {
+  echo ""
+  echo "Stopping all services..."
+  kill $BACKEND_PID 2>/dev/null
+  kill $FRONTEND_PID 2>/dev/null
+  brew services stop mysql 2>/dev/null
+  echo "✅ All services stopped."
+  exit 0
+}
 
-wait
+# Handle Ctrl+C and SIGTERM
+trap cleanup SIGINT SIGTERM
+
+# Monitor for 'exit' command in background
+(
+  while true; do
+    read -r user_input
+    if [ "$user_input" = "exit" ]; then
+      cleanup
+    fi
+  done
+) &
+MONITOR_PID=$!
+
+# Wait for background processes
+wait $BACKEND_PID $FRONTEND_PID

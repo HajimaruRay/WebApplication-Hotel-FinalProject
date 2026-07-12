@@ -2,7 +2,7 @@
 // Connected to: Script/php/routes/bookingRoutes.js
 import express from 'express';
 import bookingRoutes from './routes/bookingRoutes.js';
-import healthRoutes from './routes/healthRoutes.js';
+import healthRoutes from './routes/healthCheckRoutes.js';
 
 const app = express();
 

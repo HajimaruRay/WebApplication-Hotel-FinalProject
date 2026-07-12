@@ -1,6 +1,6 @@
-// Connected to: Script/php/controllers/HealthController.js
+// Connected to: Script/php/controllers/HealthCheckController.js
 import express from 'express';
-import healthController from '../controllers/HealthController.js';
+import healthController from '../controllers/HealthCheckController.js';
 
 const router = express.Router();
 
