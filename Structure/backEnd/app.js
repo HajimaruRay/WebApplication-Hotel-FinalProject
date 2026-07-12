@@ -1,8 +1,8 @@
 // Main Express app entry point
-// Connected to: Script/php/routes/bookingRoutes.js
 import express from 'express';
 import bookingRoutes from './routes/bookingRoutes.js';
-import healthRoutes from './routes/healthCheckRoutes.js';
+import healthCheckRoutes from './routes/healthCheckRoutes.js';
+import bookingHistoryRoutes from './routes/BookingHistoryRoutes.js';
 
 const app = express();
 
@@ -29,7 +29,8 @@ app.use((err, req, res, next) => {
 });
 
 app.use(bookingRoutes);
-app.use(healthRoutes);
+app.use(healthCheckRoutes);
+app.use(bookingHistoryRoutes);
 
 const PORT = process.env.PORT || 3000;
 const server = app.listen(PORT, () => {

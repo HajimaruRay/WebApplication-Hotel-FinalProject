@@ -16,6 +16,7 @@ sleep 2
 
 # Start PHP frontend server
 echo "3. Starting PHP frontend server..."
+cd ../../
 php -S 0.0.0.0:5500 &
 FRONTEND_PID=$!
 
@@ -42,12 +43,30 @@ cleanup() {
 # Handle Ctrl+C and SIGTERM
 trap cleanup SIGINT SIGTERM
 
-# Monitor for 'exit' command in background
+# Restart only the backend server
+restartBackend() {
+  echo "Restarting Node.js backend..."
+  kill $BACKEND_PID 2>/dev/null
+  wait $BACKEND_PID 2>/dev/null
+
+  pushd Structure/backEnd >/dev/null 2>&1
+  node app.js &
+  BACKEND_PID=$!
+  popd >/dev/null 2>&1
+
+  sleep 2
+  echo "✅ Backend restarted."
+}
+
+# Monitor for commands in background
 (
   while true; do
-    read -r user_input
-    if [ "$user_input" = "exit" ]; then
-      cleanup
+    if read -r user_input </dev/tty; then
+      if [ "$user_input" = "exit" ]; then
+        cleanup
+      elif [ "$user_input" = "restartBackend" ]; then
+        restartBackend
+      fi
     fi
   done
 ) &

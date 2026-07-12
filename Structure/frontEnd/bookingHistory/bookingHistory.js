@@ -4,10 +4,10 @@ window.addEventListener('load', function () {
     let BookingName = `${sessionStorage.getItem("Name")} ${sessionStorage.getItem("Surname")}`;
     let language = sessionStorage.getItem('language'); // ดึงค่าภาษาเพียงครั้งเดียว
 
-    fetch("../../../Script/php/bookingHistory.php", {
+    fetch("http://localhost:3000/v2.0/booking-history", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ BookingName: BookingName })
+        body: JSON.stringify({ bookingName: BookingName })
     })
         .then(response => {
             if (!response.ok) {
